@@ -17,8 +17,8 @@ void decryption(const std::string &file_name, unsigned int key) {
     for (size_t i = 0; i < outdata.size(); i+=2) {
         gamma = rand();
         b1 = outdata[i];
-        if (i+1 < str.size()){
-            b2 = str[i+1];
+        if (i+1 < outdata.size()){
+            b2 = outdata[i+1];
         } else {
             b2=0u;
         }
