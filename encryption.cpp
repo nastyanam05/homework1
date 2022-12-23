@@ -16,7 +16,11 @@ void encryption(const std::string &file_name, unsigned int key) {
     for (size_t i = 0; i < str.size(); i += 2) {
         gamma = rand();
         b1 = str[i];
-        b2 = i + 1 < str.size() ? str[i+1] : 0u;
+        if (i+1 < str.size()){
+            b2 = str[i+1];
+        } else {
+            b2=0u;
+        }
         block = (static_cast<unsigned int>(b1) << 8u | static_cast<unsigned int>(b2));
         xorblock = block ^ gamma;
         shiftblock = ((xorblock << 4u) | (xorblock >> 12u));
